@@ -3,7 +3,8 @@
   "scripts": {
     "dev": "node_modules/.bin/next dev",
     "build": "node_modules/.bin/next build",
-    "start": "node_modules/.bin/next start"
+    "start": "node_modules/.bin/next start",
+    "lint": "node_modules/.bin/next lint"
   },
   "dependencies": {
     "date-fns": "^2.29.3",
@@ -13,5 +14,9 @@
     "react-dom": "18.2.0",
     "remark": "^14.0.2",
     "remark-html": "^15.0.1"
+  },
+  "devDependencies": {
+    "eslint": "8.32.0",
+    "eslint-config-next": "13.1.5"
   }
 }
