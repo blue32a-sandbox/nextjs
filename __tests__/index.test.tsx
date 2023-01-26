@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react'
-import Home from '../pages'
+import HomePage from '../pages/index'
 import '@testing-library/jest-dom'
 
 describe('Home', () => {
@@ -8,7 +8,7 @@ describe('Home', () => {
       { id: 'hoge', title: 'Hoge page', date: '2023-01-24' },
       { id: 'fuga', title: 'Fuga page', date: '2023-01-23' },
     ];
-    render(<Home allPostsData={props} />)
+    render(<HomePage allPostsData={props} />)
 
     const listitems = screen.getAllByRole('listitem')
 
