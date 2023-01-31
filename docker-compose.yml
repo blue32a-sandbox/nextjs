@@ -5,6 +5,7 @@ services:
     image: node:18
     volumes:
       - .:/opt/project:cached
+      - next:/opt/project/.next
       - node_modules:/opt/project/node_modules
     working_dir: /opt/project
     ports:
@@ -12,4 +13,5 @@ services:
     tty: true
 
 volumes:
-  node_modules:
+ next:
+ node_modules:

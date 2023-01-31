@@ -4,9 +4,25 @@ import matter from 'gray-matter';
 import { remark } from 'remark';
 import html from 'remark-html';
 
+type PostId = string;
+
+type PostMeta = {
+  title: string;
+  date: string;
+}
+
+export type Post = PostMeta & {
+  id: PostId;
+  contentHtml: string;
+}
+
+export type PostSummery = PostMeta & {
+  id: PostId;
+}
+
 const postsDirectory = path.join(process.cwd(), 'posts');
 
-export function getSortedPostsData() {
+export function getSortedPostsData(): PostSummery[] {
   const fileName = fs.readdirSync(postsDirectory);
   const allPostsData = fileName.map((fileName) => {
     const id = fileName.replace(/\.md$/, '');
@@ -18,7 +34,7 @@ export function getSortedPostsData() {
 
     return {
       id,
-      ...matterResult.data,
+      ...<PostMeta>matterResult.data,
     };
   });
 
@@ -42,7 +58,7 @@ export function getAllPostIds() {
   });
 }
 
-export async function getPostData(id) {
+export async function getPostData(id: string): Promise<Post> {
   const filePath = path.join(postsDirectory, `${id}.md`);
   const fileContents = fs.readFileSync(filePath, 'utf8');
 
@@ -56,6 +72,6 @@ export async function getPostData(id) {
   return {
     id,
     contentHtml,
-    ...matterResult.data,
+    ...<PostMeta>matterResult.data,
   };
 }
