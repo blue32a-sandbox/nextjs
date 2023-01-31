@@ -6,12 +6,12 @@ services:
     volumes:
       - .:/opt/project:cached
       - next:/opt/project/.next
-#      - node_modules:/opt/project/node_modules
+      - node_modules:/opt/project/node_modules
     working_dir: /opt/project
     ports:
       - "3000:3000"
     tty: true
 
 volumes:
-  next:
-#  node_modules:
+ next:
+ node_modules:
