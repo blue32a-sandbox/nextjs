@@ -46,6 +46,12 @@ export default function HomePage({ allPostsData }: Props) {
           ))}
         </ul>
       </section>
+      <section>
+        <h2 className={utilStyles.headingLg}>Other</h2>
+        <ul className={utilStyles.list}>
+          <li><Link href={"/download"} target={"_blank"}>Donwload</Link></li>
+        </ul>
+      </section>
     </Layout>
   );
 }
