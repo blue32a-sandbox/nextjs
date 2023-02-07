@@ -3,9 +3,14 @@
   "dockerComposeFile": ["../docker-compose.yml"],
   "service": "node",
   "workspaceFolder": "/opt/project",
-  "extensions": [
-      "EditorConfig.EditorConfig",
-      "mhutchie.git-graph",
-      "eamodio.gitlens"
-  ]
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "EditorConfig.EditorConfig",
+        "mhutchie.git-graph",
+        "eamodio.gitlens",
+        "Orta.vscode-jest"
+      ]
+    }
+  }
 }
